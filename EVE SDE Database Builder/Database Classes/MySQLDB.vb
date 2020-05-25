@@ -327,7 +327,7 @@ Public Class MySQLDB
     ''' <summary>
     ''' Reads the list of tables created in Create Table method and does a CSV insert into the database.
     ''' </summary>
-    Public Sub FinalizeDataImport(ByRef Translator As YAMLTranslations, ByVal TranslationTableImportList As List(Of String))
+    Public Overrides Sub FinalizeDataImport(Translator As YAMLTranslations, TranslationTableImportList As List(Of String))
 
         Call InitalizeMainProgressBar(BulkInsertTablesData.Count, "Importing Bulk Data...")
 

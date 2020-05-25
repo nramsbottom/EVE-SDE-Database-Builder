@@ -321,7 +321,7 @@ Public Class postgreSQLDB
     ''' </summary>
     ''' <param name="Translator">YAMLTranslations object to get stored tables from.</param>
     ''' <param name="TranslationTableImportList">List of translation tables to import.</param>
-    Public Sub FinalizeDataImport(ByRef Translator As YAMLTranslations, ByVal TranslationTableImportList As List(Of String))
+    Public Overrides Sub FinalizeDataImport(Translator As YAMLTranslations, TranslationTableImportList As List(Of String))
 
         Call InitalizeMainProgressBar(BulkInsertTablesData.Count, "Importing Bulk Data...")
 

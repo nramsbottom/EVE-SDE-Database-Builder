@@ -310,7 +310,7 @@ Public Class msSQLDB
     ''' </summary>
     ''' <param name="Translator">YAMLTranslations object to get stored tables from.</param>
     ''' <param name="TranslationTableImportList">List of translation tables to import.</param>
-    Public Sub FinalizeDataImport(ByRef Translator As YAMLTranslations, ByVal TranslationTableImportList As List(Of String))
+    Public Overrides Sub FinalizeDataImport(Translator As YAMLTranslations, TranslationTableImportList As List(Of String))
         Dim DBREf As SqlConnection = DBConnectionRef()
         Dim Tables As New List(Of DataTable)
 
