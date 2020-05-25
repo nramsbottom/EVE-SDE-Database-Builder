@@ -1168,6 +1168,13 @@ CancelImportProcessing:
     ''' Checks for program file updates and prompts user to continue
     ''' </summary>
     Public Sub CheckForUpdates(ByVal ShowUpdateMessage As Boolean)
+
+        ' never ask to update if were in the middle of debugging, because it's very
+        ' unlikely that we will want to update at this time.
+        If (Debugger.IsAttached) Then
+            Return
+        End If
+
         Dim Response As DialogResult
         ' Program Updater
         Dim Updater As New ProgramUpdater
