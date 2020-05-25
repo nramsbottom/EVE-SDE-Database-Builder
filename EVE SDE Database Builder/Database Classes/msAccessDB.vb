@@ -325,7 +325,7 @@ Public Class msAccessDB
     ''' </summary>
     ''' <param name="Translator">YAMLTranslations object to get stored tables from.</param>
     ''' <param name="TranslationTableImportList">List of translation tables to import.</param>
-    Public Sub FinalizeDataImport(ByRef Translator As YAMLTranslations, ByVal TranslationTableImportList As List(Of String))
+    Public Overrides Sub FinalizeDataImport(Translator As YAMLTranslations, aTranslationTableImportList As List(Of String))
         ' Build the schema.ini data for this table to import with text bulk
         Dim TableStream As StreamWriter
 

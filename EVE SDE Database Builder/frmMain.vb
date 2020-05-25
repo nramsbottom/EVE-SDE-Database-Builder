@@ -436,7 +436,7 @@ ExitProc:
     ''' </summary>
     ''' <param name="UpdateDatabase">Database class to use for building database and import data into.</param>
     ''' <param name="DatabaseType">Type of Database class</param>
-    Private Sub BuildEVEDatabase(UpdateDatabase As Object, DatabaseType As DatabaseType)
+    Private Sub BuildEVEDatabase(UpdateDatabase As DBFilesBase, DatabaseType As DatabaseType)
         Dim ImportFileList As New List(Of FileListItem)
         Dim Parameters As YAMLFilesBase.ImportParameters
         Dim WorkingDirectory As String = ""

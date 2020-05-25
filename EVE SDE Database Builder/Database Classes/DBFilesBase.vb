@@ -4,7 +4,7 @@ Imports System.IO
 ''' <summary>
 ''' Base class for all database classes, which stores common functions and variables
 ''' </summary>
-Public Class DBFilesBase
+Public MustInherit Class DBFilesBase
 
     Protected Const SPACE As String = " "
     Protected Const COMMA As String = ","
@@ -124,6 +124,14 @@ Public Class DBFilesBase
         End If
 
         Return New DBField(FieldName, ReturnFieldValue, FieldDataType)
+
+    End Function
+
+    Public Overridable Sub FinalizeDataImport(translator As YAMLTranslations, translationTableImportList As List(Of String))
+        ' override this if necessary
+    End Sub
+
+    Public Overridable Function GetCSVDirectory() As String
 
     End Function
 
